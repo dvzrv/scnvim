@@ -9,7 +9,13 @@ if exists('g:scnvim_loaded')
 endif
 let g:scnvim_loaded = 1
 
-let g:scnvim_root_dir = expand('<sfile>:h:h')
+if exists('g:scnvim_assets_dir')
+  execute 'silent !mkdir -p' . ' ' . expand(g:scnvim_assets_dir) . '/scnvim-data/'
+  execute 'silent !mkdir -p' . ' ' . expand(g:scnvim_assets_dir) . '/syntax/'
+  let g:scnvim_root_dir = expand(g:scnvim_assets_dir)
+else
+  let g:scnvim_root_dir = expand('<sfile>:h:h')
+endif
 let g:scnvim_stl_widgets = {}
 
 " augroup to be used w/ ftplugin

@@ -35,6 +35,12 @@ syn clear
 
 " source generated syntax file
 runtime! syntax/classes.vim
+if exists('g:scnvim_assets_dir')
+  let s:assets_syntax = expand(g:scnvim_assets_dir) . 'syntax/classes.vim'
+  if filereadable(s:assets_syntax)
+    execute 'silent source '.fnameescape(s:assets_syntax)
+  endif
+endif
 
 syn match	scAoperator	"{"
 syn match	scAoperator	"}"
