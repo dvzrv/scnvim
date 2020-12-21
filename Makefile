@@ -5,7 +5,7 @@ PLUGIN_NAME=scnvim
 PACK_PREFIX=dist
 PREFIX:=/usr/local
 PLUGIN_DIR:=$(PREFIX)/share/nvim/site/pack/$(PACK_PREFIX)/start/$(PLUGIN_NAME)/
-SC_EXTENSIONS_DIR:=$(PREFIX)/share/SuperCollider/Extensions/$(PLUGIN_NAME)/
+SC_EXTENSIONS_DIR:=$(PREFIX)/share/SuperCollider/Extensions/scide_$(PLUGIN_NAME)/
 
 install: install_plugin_sources install_sc_sources
 
